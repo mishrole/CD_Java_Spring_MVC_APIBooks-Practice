@@ -5,6 +5,11 @@ validate.addEventListener('submit', (event) => {
 	const isValid = Validate(Array.from(inputs));
 	
 	if (isValid) {
+		const backendValidation = document.querySelectorAll('.backend-validation');
+		backendValidation.forEach(validation => {
+			validation.classList.add('d-none');
+		});
+		
 		return true;
 	} else {
 		event.preventDefault();

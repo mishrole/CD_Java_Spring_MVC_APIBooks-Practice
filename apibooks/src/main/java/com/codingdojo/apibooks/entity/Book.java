@@ -27,19 +27,19 @@ public class Book {
     private Long id;
 	
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Title must be at least 5 characters long")
     private String title;
     
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Description must be at least 5 characters long")
     private String description;
     
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Title must be at least 3 characters long")
     private String language;
     
     @NotNull
-    @Min(100)
+    @Min(value=100, message="Number of pages must be at least 100")
     private Integer numberOfPages;
     
     // Esto no permitirá que la columna createdAt se actualice después de la creación
