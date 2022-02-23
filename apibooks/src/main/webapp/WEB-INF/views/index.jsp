@@ -14,7 +14,13 @@
 	<div class="container py-5">
 		<div class="d-flex justify-content-center">
 			<div class="container">
-				<h3>All Books</h3>
+				<div class="d-flex justify-content-between align-items-center pb-4">
+					<h3>All Books</h3>
+					<div>
+						<a href="/books/new" class="btn btn-primary">New Book</a>
+					</div>
+				</div>
+				
 				<div class="table-responsive">
 					<table class="table table-hover">
 					  <thead>

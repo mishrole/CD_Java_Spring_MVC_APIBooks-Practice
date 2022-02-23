@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.codingdojo.apibooks.entity.Book;
 import com.codingdojo.apibooks.service.BookService;
@@ -17,6 +18,11 @@ public class BookController {
 	
 	@Autowired
 	private BookService bookService;
+	
+	@RequestMapping("/new")
+	public String newBook() {
+		return "new";
+	}
 	
     @RequestMapping()
     public String index(Model model) {
@@ -30,5 +36,11 @@ public class BookController {
         Book result = bookService.findBook(id);
         model.addAttribute("book", result);
         return "show";
+    }
+    
+    @RequestMapping(method = RequestMethod.POST)
+    public String create(Book book) {
+        bookService.createBook(book);
+        return "redirect:/books";
     }
 }
