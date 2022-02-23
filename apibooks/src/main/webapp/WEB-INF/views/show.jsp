@@ -23,11 +23,11 @@
 						<p><span class="fw-bold">Language:</span> <c:out value="${book.language}"></c:out></p>
 						<p><span class="fw-bold">Number of Pages:</span> <c:out value="${book.numberOfPages}"></c:out></p>
 					</div>
-					<!--<div class="card-footer">
+					<div class="card-footer">
 						<div class="d-flex justify-content-center align-items-center">
-						<a href="/">Go back</a>
+						<a href="/books">Go back</a>
 						</div>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
