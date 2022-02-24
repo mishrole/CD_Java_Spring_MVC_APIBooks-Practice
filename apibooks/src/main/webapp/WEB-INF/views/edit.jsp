@@ -17,6 +17,8 @@
 	<div class="container py-5">
 		<div class="d-flex justify-content-center">
 			<div class="container">
+				<div class="pt-2 pb-4"><a href="/books">Go back</a></div>
+			
 				<h3 class="text-center">Edit Book</h3>
 				<div class="card">
 					<div class="card-body">
