@@ -14,6 +14,8 @@
 	<div class="container py-5">
 		<div class="d-flex justify-content-center">
 			<div class="container">
+				<div class="pt-2 pb-4"><a href="/books">Go back</a></div>
+				
 				<div class="card">
 					<div class="card-header">
 						<h3><c:out value="${book.title}"></c:out></h3>
