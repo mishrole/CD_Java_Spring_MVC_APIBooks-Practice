@@ -28,6 +28,13 @@ public class BookController {
 		return "new";
 	}
 	
+	@RequestMapping("/{id}/edit")
+	public String edit(@PathVariable("id") Long id, Model model) {
+		Book result = bookService.findBook(id);
+        model.addAttribute("book", result);
+        return "edit";
+	}
+	
     @RequestMapping()
     public String index(Model model) {
     	List<Book> books = bookService.allBooks();
@@ -50,5 +57,15 @@ public class BookController {
         
         bookService.createBook(book);
         return "redirect:/books";
+    }
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("book") Book book, BindingResult result) {
+    	if (result.hasErrors()) {
+    		return "edit";
+    	}
+    	
+    	bookService.updateBook(id, book);
+    	return "redirect:/books";
     }
 }
