@@ -8,6 +8,7 @@
 	<title>Reading Books</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	
@@ -39,13 +40,20 @@
 						      <td><a href="/books/${book.id}">${book.title}</a></td>
 						      <td>${book.language}</td>
 						      <td>${book.numberOfPages}</td>
-						      <td><a href="/books/${book.id}/edit">Edit</a></td>
+						      <td>
+						      	<div class="d-flex justify-content-between align-items-center">
+							      	<a href="/books/${book.id}/edit">Edit</a>
+								      <form action="/books/${book.id}" method="post">
+								      	<input type="hidden" name="_method" value="DELETE">
+								      	<button type="submit" class="btn btn-default link">Delete</button>
+								      </form>
+						      	</div>
+						      </td>
 						    </tr>
 						</c:forEach>
 					  </tbody>
 					</table>
 				</div>
-				
 				
 			</div>
 		</div>

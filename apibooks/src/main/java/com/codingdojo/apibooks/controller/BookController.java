@@ -68,4 +68,10 @@ public class BookController {
     	bookService.updateBook(id, book);
     	return "redirect:/books";
     }
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String destroy(@PathVariable("id") Long id) {
+    	bookService.deleteBook(id);
+    	return "redirect:/books";
+    }
 }
