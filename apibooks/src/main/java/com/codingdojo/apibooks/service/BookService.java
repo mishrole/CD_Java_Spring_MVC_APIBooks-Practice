@@ -54,7 +54,7 @@ public class BookService implements IBookService {
 			data.setNumberOfPages(book.getNumberOfPages());
 			data.setTitle(book.getTitle());
 			
-			return bookRepository.save(book);
+			return bookRepository.save(data);
 		}
 		
 		return null;
